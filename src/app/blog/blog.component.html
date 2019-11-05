@@ -1,1 +1,6 @@
-<p>blog works!</p>
+<h3 [routerLink]="['/home']">List Title</h3>
+
+<P *ngFor="let item of outPut">
+  <a [routerLink]="['/content',item.id]">{{item.nameTitle}}</a>
+</P>
+<router-outlet></router-outlet>

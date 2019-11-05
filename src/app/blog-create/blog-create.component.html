@@ -1,1 +1,33 @@
-<p>blog-create works!</p>
+<h1>Create Blog</h1>
+<form novalidate (ngSubmit)="createBlog()" [formGroup]="data" class="row justify-content-md-center">
+  <div class="col-sm-9 message" *ngIf="message">
+    <p>{{message}}</p>
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label">Title</label>
+      <div class="col-md-9">
+        <input class="form-control" type="text"  formControlName="nameTitle">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('nameTitle').invalid && data.get('nameTitle').touched">
+    Invalid Title!
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group row">
+      <label  class="col-md-3 col-form-label">Content</label>
+      <div class="col-md-9">
+        <textarea class="form-control" type="text"  formControlName="content"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('content').invalid && data.get('content').touched">
+    Invalid content!
+  </div>
+  <div class="col-sm-9">
+    <div class="form-group row">
+      <input type="submit" value="submit">
+    </div>
+  </div>
+</form>

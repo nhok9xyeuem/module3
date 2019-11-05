@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Post} from '../post';
+import {PostService} from '../post.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  outPut: Post[];
+
+  constructor(private postService: PostService) {
+    this.postService.findAll().subscribe(next => {
+        this.outPut = next;
+      },
+      error => {
+        alert('Loi Roi' + error);
+      }
+    );
+  }
 
   ngOnInit() {
   }

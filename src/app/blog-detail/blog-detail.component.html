@@ -1,1 +1,11 @@
-<p>blog-detail works!</p>
+<div>
+  <h4>
+    {{outPutConten.nameTitle}}
+  </h4>
+    <a [routerLink]="['/edit',outPutConten.id]">EDIT</a> ||
+    <a [routerLink]="['/delete',outPutConten.id]">DELETE</a>
+  <p>
+    {{outPutConten.content}}
+  </p>
+</div>
+

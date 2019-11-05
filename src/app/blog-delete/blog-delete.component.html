@@ -1,1 +1,26 @@
-<p>blog-delete works!</p>
+<h1>Delete Member</h1>
+<div class="col-sm-9 message" *ngIf="message">
+  <p>{{message}}</p>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Title <span>{{post.nameTitle}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>LastName: <span>{{post.content}}</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <button (click)="deleteBlog(post.id)">Delete</button>
+    </div>
+  </div>
+</div>
